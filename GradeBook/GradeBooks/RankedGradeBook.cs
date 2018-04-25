@@ -31,17 +31,19 @@ namespace GradeBook.GradeBooks
             {
                 if (averageGrade > grades[i])
                 {
-                    GradeRank = ((i + 1)/grades.Count*100);
+                    GradeRank = i + 1;
                 }
             }
+            double GradePercent = GradeRank / grades.Count * 100.0;
 
-            if (GradeRank >= 80)
+
+            if (GradePercent >= 80)
                 return 'A';
-            else if (GradeRank >= 60)
+            else if (GradePercent >= 60)
                 return 'B';
-            else if (GradeRank >= 40)
+            else if (GradePercent >= 40)
                 return 'C';
-            else if (GradeRank >= 20)
+            else if (GradePercent >= 20)
                 return 'D';
             else
                 return 'F';
